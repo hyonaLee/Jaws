@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/11ac357bfd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="headerwrap">
+        <h1 class="logo"></h1>
+        <nav>
+          <ul class="main-menu">
+            <li class="main-li">
+              BRAND
+              <ul class="sub-menu">
+                <li>대표인사말</li>
+                <li>죠스이야기</li>
+                <li>채용정보</li>
+              </ul>
+            </li>
+            <li class="main-li">
+              MENU
+              <ul class="sub-menu">
+                <li>메인메뉴</li>
+                <li>세트메뉴</li>
+                <li>사이드메뉴</li>
+              </ul>
+            </li>
+            <li class="main-li">
+              STORE
+              <ul class="sub-menu">
+                <li>매장찾기</li>
+                <li>매장안내</li>
+              </ul>
+            </li>
+            <li class="main-li">
+              COMMUNITY
+              <ul class="sub-menu">
+                <li>커뮤니티</li>
+                <li>고객의소리</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <select name="lang" id="lang">
+          <option value="ko">KO</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </header>
+    <!-- header -->
+    <main>
+      <section class="sec1">
+        <div class="slider">
+          <div class="slider__item"><p>1</p></div>
+          <div class="slider__item"><p>2</p></div>
+          <div class="slider__item"><p>3</p></div>
+        </div>
+      </section>
+      <!-- sec1 -->
+      <section class="sec2">
+        <article class="sec2-art1">
+          <h3 class="subtitle">NEW STORE</h3>
+          <p class="submention">
+            죠스떡볶이<br /><span>새 매장을<br />소개합니다.</span>
+          </p>
+          <a href="#" class="moreBtn">죠스떡볶이 새 매장 만나기</a>
+        </article>
+        <article class="sec2-art2">
+          <h3 class="subtitle">STORE SEARCH</h3>
+          <p class="submention">
+            죠스떡볶이<br /><span>매장,<br />어디있죠!?</span>
+          </p>
+          <div class="search">
+            <input
+              class="searchArea"
+              type="search"
+              placeholder="가까운 지역명을 검색하세요"
+            />
+            <span class="searchBtn"><i class="fas fa-search"></i></span>
+          </div>
+        </article>
+      </section>
+      <!-- sec2 -->
+      <section class="sec3">
+        <h3 class="subtitle">JAWS MENU</h3>
+        <p class="submention">오늘 죠스에서<br /><span>뭘 먹을까?</span></p>
+        <a href="#" class="moreBtn">죠스떡볶이 전체메뉴 보기</a>
+      </section>
+      <!-- sec3 -->
+      <section class="sec4">
+        <article class="sec4-art1"></article>
+        <article class="sec4-art2">
+          <h3 class="subtitle">JAWS MOBILE COUPON</h3>
+          <p class="submention">
+            배달도 되고,<br /><span>선물도 됩니다.</span><br /><span
+              class="jaws"
+              >죠스떡볶이.</span
+            >
+          </p>
+        </article>
+      </section>
+      <!-- sec4 -->
+      <section class="sec5">
+        <article class="sec5-art1">
+          <h3 class="subtitle">JAWS COMMUNITY</h3>
+          <p class="submention">
+            죠스는 항상 <span class="jaws">즐겁습니다.</span>
+          </p>
+        </article>
+        <article class="sec5-art2">
+          <div class="imgbox">
+            <img src="img/20180129864134.jpg" />
+            <h3 class="subtitle">#떡볶이죠시락</h3>
+          </div>
+          <div class="imgbox">
+            <img src="img/20180129194193.jpg" />
+            <h3 class="subtitle">#꺾어먹는_죠스밥</h3>
+          </div>
+          <div class="imgbox">
+            <img src="img/20180129851358.jpg" />
+            <h3 class="subtitle">#죠스떡볶이_길이</h3>
+          </div>
+          <div class="imgbox">
+            <img src="img/20180129791738.jpg" />
+            <h3 class="subtitle">#삼각죠스밥</h3>
+          </div>
+        </article>
+      </section>
+      <!-- sec5 -->
+    </main>
+    <!-- footer -->
+    <footer>
+      <h5>죠스떡볶이 클론코딩</h5>
+      <p>COPYRIGHT (C) Hyunha ALL RIGHTS RESERVED.</p>
+    </footer>
+    <!-- footer -->
+    <script>
+      const Show = "show";
+      const firstSlide = document.querySelector(".slider__item:first-child");
+
+      function slide() {
+        const currentSlide = document.querySelector(`.${Show}`);
+
+        if (currentSlide) {
+          // 만약 현재 슬라이드라면
+          currentSlide.classList.remove(Show); // 현재 슬라이드에서 SHOWING_CLASS를 제거한다
+          const nextSlide = currentSlide.nextElementSibling; // 다음 슬라이드를 정의한다.
+
+          if (nextSlide) {
+            //만약 다음 슬라이드가 있다면
+            nextSlide.classList.add(Show); //다음 슬라이드에 SHOWING_CLASS를 붙인다.
+          } else {
+            // 다음 슬라이드가 없다면 =>  5번째 슬라이드라면(마지막 슬라이드라면)
+            firstSlide.classList.add(Show); // 첫번째 슬라이드에 SHOWING_CLASS를 붙인다.
+          }
+        } else {
+          firstSlide.classList.add(Show);
+        }
+      }
+
+      slide();
+      setInterval(slide, 4000);
+    </script>
+  </body>
+</html>
